@@ -11,6 +11,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    env:
+      PORT: 3001
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+      SECRET: ${{ secrets.SECRET }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -20,12 +25,12 @@ jobs:
       - name: 'backend: npm install'
         working-directory: ./backend
         run: npm install
-      # - name: 'backend: npm run lint'
-      #   working-directory: ./backend
-      #   run: npm run lint
-      # - name: 'backend: npm test'
-      #   working-directory: ./backend
-      #   run: npm test
+      - name: 'backend: npm run lint'
+        working-directory: ./backend
+        run: npm run lint
+      - name: 'backend: npm test'
+        working-directory: ./backend
+        run: npm test
 
       - name: 'frontend: npm install'
         working-directory: ./frontend
@@ -39,10 +44,10 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'fullstackopen-cicd-demo'
+          heroku_app_name: 'fullstackopen-cicd-bloglist'
           heroku_email: 'smulitus@gmail.com'
           remote_branch: master
-          healthcheck: 'https://fullstackopen-cicd-demo.herokuapp.com/health'
+          healthcheck: 'https://fullstackopen-cicd-bloglist.herokuapp.com/health'
           checkstring: 'ok'
 
       - uses: actions/checkout@v2
