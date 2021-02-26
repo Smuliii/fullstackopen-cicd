@@ -44,7 +44,6 @@ jobs:
           remote_branch: master
           healthcheck: 'https://fullstackopen-cicd-demo.herokuapp.com/health'
           checkstring: 'ok'
-          # rollbackonhealthcheckfailed: true
 
       - uses: actions/checkout@v2
       - name: Bump version and push tag
