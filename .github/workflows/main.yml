@@ -38,7 +38,6 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          appdir: backend
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'fullstackopen-cicd-demo'
           heroku_email: 'smulitus@gmail.com'
