@@ -43,6 +43,8 @@ if (process.env.NODE_ENV === 'test') {
   app.use('/api/testing', testingRouter)
 }
 
+app.get('/health', (req, res) => res.send('ok'))
+
 // Every non-api request goes to React app
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../frontend/build/index.html')))
 
