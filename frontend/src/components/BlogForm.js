@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core'
 
 const BlogForm = ({ createNewBlog }) => {
   const [formData, setFormData] = useState({})
@@ -32,7 +32,7 @@ const BlogForm = ({ createNewBlog }) => {
       <div>
         <TextField label="Url" name="url" id="url" value={formData.url || ''} onChange={handleInputChange} />
       </div>
-	  <p><Button variant="contained" color="primary" type="submit">Add</Button></p>
+      <p><Button variant="contained" color="primary" type="submit">Add</Button></p>
     </form>
   )
 }

@@ -6,6 +6,11 @@ module.exports = {
     'jest/globals': true,
     // 'cypress/globals': true
   },
+  'settings': {
+    'react': {
+      'version': 'detect',
+    },
+  },
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended'
@@ -14,7 +19,7 @@ module.exports = {
     'ecmaFeatures': {
       'jsx': true
     },
-    'ecmaVersion': 2018,
+    'ecmaVersion': 2020,
     'sourceType': 'module',
   },
   'plugins': [
