@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core'
 import Notification from './Notification'
 
 const LoginForm = ({ username, password, handleLogin, handleUsernameChange, handlePasswordChange }) => {
@@ -13,7 +13,7 @@ const LoginForm = ({ username, password, handleLogin, handleUsernameChange, hand
       <div>
         <TextField label="Password" type="password" name="password" id="password" value={password} onChange={handlePasswordChange} />
       </div>
-	  <p><Button variant="contained" color="primary" type="submit">Login</Button></p>
+      <p><Button variant="contained" color="primary" type="submit">Login</Button></p>
     </form>
   )
 }

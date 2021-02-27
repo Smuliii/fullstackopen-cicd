@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom'
 import BlogForm from './BlogForm'
 import Notification from './Notification'
 import Togglable from './Togglable'
-import { List, ListItem } from '@material-ui/core';
+import { List, ListItem } from '@material-ui/core'
 
 const Blogs = React.forwardRef(({ blogs, user, createNewBlog }, ref) => {
   return (
@@ -17,7 +17,7 @@ const Blogs = React.forwardRef(({ blogs, user, createNewBlog }, ref) => {
       <h3>Blogs</h3>
       <List className="blog-list">
         {blogs.sort((a, b) => b.likes - a.likes).map(blog => (
-          <ListItem button component={RouterLink} to={`/blogs/${blog.id}`}>{blog.title}</ListItem>
+          <ListItem key={blog.id} button component={RouterLink} to={`/blogs/${blog.id}`}>{blog.title}</ListItem>
         ))}
       </List>
     </div>

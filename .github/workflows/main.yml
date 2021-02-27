@@ -35,6 +35,9 @@ jobs:
       - name: 'frontend: npm install'
         working-directory: ./frontend
         run: npm install
+      - name: 'frontend: npm test'
+        working-directory: ./frontend
+        run: npm test -- --watchAll=false
       - name: 'frontend: npm build'
         working-directory: ./frontend
         run: npm build

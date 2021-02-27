@@ -1,5 +1,5 @@
 import React, { useImperativeHandle, useState } from 'react'
-import { Button } from '@material-ui/core';
+import { Button } from '@material-ui/core'
 
 const Togglable = React.forwardRef((props, ref) => {
   const {
